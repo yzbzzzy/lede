@@ -58,7 +58,8 @@ jobs:
 
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j1 V=s
+          #make -j$(nproc) || make -j1 V=s 
+          make V=s LINUX_VERMAGIC:=29bce9bec5575c0d5f10460c55ee7344  ./package/feeds/packages/openconnect/{clean,compile}
           echo "======================="
           echo "Space usage:"
           echo "======================="
